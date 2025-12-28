@@ -1,9 +1,9 @@
-// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'menu_item.dart';
 
 class SideMenu extends StatelessWidget {
+  const SideMenu({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -11,33 +11,33 @@ class SideMenu extends StatelessWidget {
       color: Colors.white,
       child: SafeArea(
         child: SingleChildScrollView(
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20),
           child: Column(
             children: [
               NavItem(
                 title: 'Home',
                 tapEvent: () {},
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               NavItem(
                 title: 'Donate',
                 tapEvent: () {},
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               NavItem(
                 title: 'Contact Us',
                 tapEvent: () {},
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               NavItem(
                 title: 'Login',
                 tapEvent: () {},
               ),
-              SizedBox(height: 10),
-              NavItem(
-                title: 'Shop',
-                tapEvent: () {},
-              ),
+              const SizedBox(height: 10),
+              // NavItem(
+              //   title: 'Shop',
+              //   tapEvent: () {},
+              // ),
             ],
           ),
         ),

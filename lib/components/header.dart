@@ -1,32 +1,27 @@
-// ignore_for_file: unused_import, prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../constants.dart';
 import '../responsive.dart';
 import 'menu_item.dart';
 
 class Header extends StatelessWidget {
-  const Header({
-    Key? key,
-  }) : super(key: key);
+  const Header({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+      margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
       child: Row(
         children: <Widget>[
           Image.asset(
             'assets/images/logo.png',
             width: 50,
           ),
-          SizedBox(width: 10),
+          const SizedBox(width: 10),
           Text(
             "SAMRAT",
             style: GoogleFonts.reenieBeanie(fontSize: 18),
           ),
-          Spacer(),
+          const Spacer(),
           if (!isMobile(context))
             Row(
               children: [
@@ -46,18 +41,19 @@ class Header extends StatelessWidget {
                   title: 'Login',
                   tapEvent: () {},
                 ),
-                NavItem(
-                  title: 'Shop',
-                  tapEvent: () {},
-                ),
+                // NavItem(
+                //   title: 'Shop',
+                //   tapEvent: () {},
+                // ),
               ],
             ),
           if (isMobile(context))
             IconButton(
-                icon: Icon(Icons.menu),
-                onPressed: () {
-                  Scaffold.of(context).openEndDrawer();
-                })
+              icon: const Icon(Icons.menu),
+              onPressed: () {
+                Scaffold.of(context).openEndDrawer();
+              },
+            ),
         ],
       ),
     );

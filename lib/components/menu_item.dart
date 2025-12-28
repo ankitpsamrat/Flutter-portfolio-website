@@ -1,14 +1,15 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import '../constants.dart';
 
 class NavItem extends StatelessWidget {
-  const NavItem({Key? key, required this.title, required this.tapEvent})
-      : super(key: key);
-
   final String title;
   final GestureTapCallback tapEvent;
+
+  const NavItem({
+    super.key,
+    required this.title,
+    required this.tapEvent,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -16,10 +17,13 @@ class NavItem extends StatelessWidget {
       onTap: tapEvent,
       hoverColor: Colors.transparent,
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 15),
+        padding: const EdgeInsets.symmetric(horizontal: 15),
         child: Text(
           title,
-          style: TextStyle(color: kTextColor, fontWeight: FontWeight.w300),
+          style: const TextStyle(
+            color: kTextColor,
+            fontWeight: FontWeight.w300,
+          ),
         ),
       ),
     );
