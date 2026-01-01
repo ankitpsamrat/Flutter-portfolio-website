@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../constants.dart';
+import 'package:portfolio_website/helpers/constants.dart';
 
 class NavItem extends StatelessWidget {
   final String title;

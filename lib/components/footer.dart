@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../constants.dart';
-import '../responsive.dart';
+import 'package:portfolio_website/helpers/constants.dart';
+import 'package:portfolio_website/helpers/responsive.dart';
 
 class Footer extends StatelessWidget {
   const Footer({super.key});
@@ -32,20 +32,34 @@ class DesktopFooter extends StatelessWidget {
             child: Row(
               children: <Widget>[
                 NavItem(
-                  title: 'Twitter',
-                  tapEvent: () {},
-                ),
-                NavItem(
-                  title: 'Facebook',
-                  tapEvent: () {},
+                  title: 'Instagram',
+                  tapEvent: () {
+                    launchSocialMedia(SocialMedia.instagram);
+                  },
                 ),
                 NavItem(
                   title: 'Linkedin',
-                  tapEvent: () {},
+                  tapEvent: () {
+                    launchSocialMedia(SocialMedia.linkedin);
+                  },
                 ),
                 NavItem(
-                  title: 'Instagram',
-                  tapEvent: () {},
+                  title: 'Github',
+                  tapEvent: () {
+                    launchSocialMedia(SocialMedia.github);
+                  },
+                ),
+                NavItem(
+                  title: 'Facebook',
+                  tapEvent: () {
+                    launchSocialMedia(SocialMedia.facebook);
+                  },
+                ),
+                NavItem(
+                  title: 'Twitter',
+                  tapEvent: () {
+                    launchSocialMedia(SocialMedia.twitter);
+                  },
                 ),
               ],
             ),
@@ -70,24 +84,39 @@ class MobileFooter extends StatelessWidget {
             'All Right Reserved',
             style: TextStyle(fontSize: 10),
           ),
+          const SizedBox(height: 5),
           Wrap(
             alignment: WrapAlignment.center,
             children: <Widget>[
               NavItem(
-                title: 'Twitter',
-                tapEvent: () {},
-              ),
-              NavItem(
-                title: 'Facebook',
-                tapEvent: () {},
+                title: 'Instagram',
+                tapEvent: () {
+                  launchSocialMedia(SocialMedia.instagram);
+                },
               ),
               NavItem(
                 title: 'Linkedin',
-                tapEvent: () {},
+                tapEvent: () {
+                  launchSocialMedia(SocialMedia.linkedin);
+                },
               ),
               NavItem(
-                title: 'Instagram',
-                tapEvent: () {},
+                title: 'Github',
+                tapEvent: () {
+                  launchSocialMedia(SocialMedia.github);
+                },
+              ),
+              NavItem(
+                title: 'Facebook',
+                tapEvent: () {
+                  launchSocialMedia(SocialMedia.facebook);
+                },
+              ),
+              NavItem(
+                title: 'Twitter',
+                tapEvent: () {
+                  launchSocialMedia(SocialMedia.twitter);
+                },
               ),
             ],
           ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'menu_item.dart';
+import 'package:portfolio_website/components/menu_item.dart';
 
 class SideMenu extends StatelessWidget {
   const SideMenu({super.key});
@@ -20,7 +20,7 @@ class SideMenu extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               NavItem(
-                title: 'Donate',
+                title: 'About',
                 tapEvent: () {},
               ),
               const SizedBox(height: 10),
@@ -33,11 +33,6 @@ class SideMenu extends StatelessWidget {
                 title: 'Login',
                 tapEvent: () {},
               ),
-              const SizedBox(height: 10),
-              // NavItem(
-              //   title: 'Shop',
-              //   tapEvent: () {},
-              // ),
             ],
           ),
         ),

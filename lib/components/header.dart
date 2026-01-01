@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../responsive.dart';
-import 'menu_item.dart';
+import 'package:portfolio_website/helpers/responsive.dart';
+import 'package:portfolio_website/components/menu_item.dart';
 
 class Header extends StatelessWidget {
   const Header({super.key});
@@ -30,21 +30,17 @@ class Header extends StatelessWidget {
                   tapEvent: () {},
                 ),
                 NavItem(
-                  title: 'Donate',
+                  title: 'About',
                   tapEvent: () {},
                 ),
                 NavItem(
-                  title: 'Contact Us',
+                  title: 'Contact',
                   tapEvent: () {},
                 ),
                 NavItem(
                   title: 'Login',
                   tapEvent: () {},
                 ),
-                // NavItem(
-                //   title: 'Shop',
-                //   tapEvent: () {},
-                // ),
               ],
             ),
           if (isMobile(context))
