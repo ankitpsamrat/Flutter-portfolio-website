@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:portfolio_website/components/menu_item.dart';
 
 class SideMenu extends StatelessWidget {
-  const SideMenu({super.key});
+  final Function(String) onScreenChange;
+
+  const SideMenu({
+    super.key,
+    required this.onScreenChange,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -16,12 +21,12 @@ class SideMenu extends StatelessWidget {
             children: [
               NavItem(
                 title: 'Home',
-                tapEvent: () {},
+                tapEvent: () => onScreenChange('home'),
               ),
               const SizedBox(height: 10),
               NavItem(
                 title: 'About',
-                tapEvent: () {},
+                tapEvent: () => onScreenChange('about'),
               ),
               const SizedBox(height: 10),
               NavItem(

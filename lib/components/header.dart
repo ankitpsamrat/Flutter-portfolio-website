@@ -4,7 +4,12 @@ import 'package:portfolio_website/helpers/responsive.dart';
 import 'package:portfolio_website/components/menu_item.dart';
 
 class Header extends StatelessWidget {
-  const Header({super.key});
+  final Function(String) onScreenChange;
+
+  const Header({
+    super.key,
+    required this.onScreenChange,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -27,11 +32,11 @@ class Header extends StatelessWidget {
               children: [
                 NavItem(
                   title: 'Home',
-                  tapEvent: () {},
+                  tapEvent: () => onScreenChange('home'),
                 ),
                 NavItem(
                   title: 'About',
-                  tapEvent: () {},
+                  tapEvent: () => onScreenChange('about'),
                 ),
                 NavItem(
                   title: 'Contact',
