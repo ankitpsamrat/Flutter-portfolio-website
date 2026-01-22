@@ -40,12 +40,12 @@ class Header extends StatelessWidget {
                 ),
                 NavItem(
                   title: 'Contact',
-                  tapEvent: () {},
+                  tapEvent: () => onScreenChange('contact'),
                 ),
-                NavItem(
-                  title: 'Login',
-                  tapEvent: () {},
-                ),
+                // NavItem(
+                //   title: 'Login',
+                //   tapEvent: () {},
+                // ),
               ],
             ),
           if (isMobile(context))

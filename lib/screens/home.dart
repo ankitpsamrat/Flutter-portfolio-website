@@ -3,6 +3,7 @@ import 'package:portfolio_website/screens/about_screen.dart';
 import 'package:portfolio_website/components/footer.dart';
 import 'package:portfolio_website/components/header.dart';
 import 'package:portfolio_website/components/side_menu.dart';
+import 'package:portfolio_website/screens/contact_screen.dart';
 import 'package:portfolio_website/screens/home_view.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -30,6 +31,8 @@ class _HomeScreenState extends State<HomeScreen> {
     switch (_currentScreen) {
       case 'about':
         return const AboutScreen();
+      case 'contact':
+        return const ContactScreen();
       case 'home':
       default:
         return const HomeView();

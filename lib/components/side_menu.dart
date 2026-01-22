@@ -31,13 +31,13 @@ class SideMenu extends StatelessWidget {
               const SizedBox(height: 10),
               NavItem(
                 title: 'Contact Us',
-                tapEvent: () {},
+                tapEvent: () => onScreenChange('contact'),
               ),
-              const SizedBox(height: 10),
-              NavItem(
-                title: 'Login',
-                tapEvent: () {},
-              ),
+              // const SizedBox(height: 10),
+              // NavItem(
+              //   title: 'Login',
+              //   tapEvent: () {},
+              // ),
             ],
           ),
         ),
