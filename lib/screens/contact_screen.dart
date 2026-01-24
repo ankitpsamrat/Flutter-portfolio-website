@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_website/components/contact_chip.dart';
 import 'package:portfolio_website/components/main_button.dart';
 import 'package:portfolio_website/helpers/constants.dart';
 import 'package:portfolio_website/helpers/responsive.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class ContactScreen extends StatefulWidget {
   const ContactScreen({super.key});
@@ -33,48 +33,6 @@ class _ContactScreenState extends State<ContactScreen> {
     }
   }
 
-  Future<void> _launchEmail(String email) async {
-    final Uri uri = Uri.parse('mailto:$email');
-    if (await canLaunchUrl(uri)) {
-      await launchUrl(uri);
-    }
-  }
-
-  @override
-  void dispose() {
-    _nameController.dispose();
-    _emailController.dispose();
-    _messageController.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.symmetric(
-        vertical: 20,
-        horizontal: isMobile(context) ? 20 : 40,
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Text(
-            'Get In Touch',
-            style: TextStyle(
-              fontSize: isDesktop(context) ? 48 : 32,
-              fontWeight: FontWeight.w800,
-              color: kTextColor,
-            ),
-          ),
-          const SizedBox(height: 20),
-          _buildContactCard(),
-          const SizedBox(height: 40),
-          _buildFeedbackForm(),
-        ],
-      ),
-    );
-  }
-
   Widget _buildContactCard() {
     return Container(
       width: double.infinity,
@@ -98,14 +56,14 @@ class _ContactScreenState extends State<ContactScreen> {
             runSpacing: 16,
             spacing: isMobile(context) ? 0 : 32,
             children: [
-              _ContactChip(
+              const ContactChip(
                 icon: Icons.email_outlined,
                 label: 'Email',
                 value: 'ankit.p.15575@email.com',
-                onTap: () => _launchEmail('ankit.p.15575@email.com'),
+                onTap: null,
               ),
               if (!isMobile(context)) const SizedBox(width: 32),
-              const _ContactChip(
+              const ContactChip(
                 icon: Icons.location_on_outlined,
                 label: 'Location',
                 value: 'India',
@@ -264,95 +222,38 @@ class _ContactScreenState extends State<ContactScreen> {
       ),
     );
   }
-}
-
-class _ContactChip extends StatelessWidget {
-  final IconData icon;
-  final String label;
-  final String value;
-  final VoidCallback? onTap;
-
-  const _ContactChip({
-    required this.icon,
-    required this.label,
-    required this.value,
-    this.onTap,
-  });
 
   @override
-  Widget build(BuildContext context) {
-    final widget = Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Container(
-            padding: const EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: kPrimaryColor.withValues(alpha: 0.1),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Icon(icon, color: kPrimaryColor, size: 22)),
-        const SizedBox(width: 10),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              label,
-              style: TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.w500,
-                color: kTextColor.withValues(alpha: 0.6),
-              ),
-            ),
-            Text(
-              value,
-              style: const TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.w600,
-                color: kTextColor,
-              ),
-            ),
-          ],
-        ),
-      ],
-    );
-
-    if (onTap != null) {
-      return MouseRegion(
-        cursor: SystemMouseCursors.click,
-        child: GestureDetector(
-          onTap: onTap,
-          child: widget,
-        ),
-      );
-    }
-    return widget;
+  void dispose() {
+    _nameController.dispose();
+    _emailController.dispose();
+    _messageController.dispose();
+    super.dispose();
   }
-}
-
-class _SocialIcon extends StatelessWidget {
-  final IconData icon;
-  final VoidCallback onTap;
-
-  const _SocialIcon({
-    required this.icon,
-    required this.onTap,
-  });
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: Colors.transparent,
-      child: InkWell(
-        onTap: onTap,
-        borderRadius: BorderRadius.circular(10),
-        child: Container(
-          padding: const EdgeInsets.all(10),
-          decoration: BoxDecoration(
-            color: kPrimaryColor.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(10),
+    return Container(
+      margin: EdgeInsets.symmetric(
+        vertical: 20,
+        horizontal: isMobile(context) ? 20 : 40,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text(
+            'Get In Touch',
+            style: TextStyle(
+              fontSize: isDesktop(context) ? 48 : 32,
+              fontWeight: FontWeight.w800,
+              color: kTextColor,
+            ),
           ),
-          child: Icon(icon, color: kPrimaryColor, size: 24),
-        ),
+          const SizedBox(height: 20),
+          _buildContactCard(),
+          const SizedBox(height: 40),
+          _buildFeedbackForm(),
+        ],
       ),
     );
   }
