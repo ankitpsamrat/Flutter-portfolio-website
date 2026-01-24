@@ -27,7 +27,7 @@ class HomeView extends StatelessWidget {
                 children: <Widget>[
                   if (isMobile(context))
                     Image.asset(
-                      'images/mypic.png',
+                      'assets/images/mypic.png',
                       height: size.height * 0.3,
                     ),
                   const SizedBox(height: 15),
@@ -94,7 +94,7 @@ class HomeView extends StatelessWidget {
           if (isDesktop(context) || isTab(context))
             Expanded(
               child: Image.asset(
-                'images/mypic.png',
+                'assets/images/mypic.png',
                 height: size.height * 0.7,
               ),
             ),
